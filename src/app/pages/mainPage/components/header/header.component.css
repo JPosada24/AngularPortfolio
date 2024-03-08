@@ -1,0 +1,24 @@
+.grid {
+	background: url('../../../../../assets/Fondo_1.jpg') no-repeat;
+	background-size: cover;
+	background-position: center;
+	height: 100vh;
+	margin: 0;
+	position: relative;
+}
+
+.grid::before {
+	content: '';
+	position: absolute;
+	height: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+img {
+	filter: brightness(80%);
+	user-select: none;
+}

@@ -1,0 +1,5 @@
+ @for (network of socialNetworks; track $index) {
+<a [href]="network.url" target="_blank"><li
+		class="flex justify-content-center align-items-center list-none p-2 border-circle" [style]="{background: bgColor}"><img [style]="{ filter: brightness}"
+			src="{{network.logo}}" [alt]="network.name" width="20"></li></a>
+}

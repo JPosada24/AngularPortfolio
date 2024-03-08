@@ -1,1 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import "primeicons/primeicons.css";
+
+* {
+	font-family: "Righteous", sans-serif;
+}
+
+.app-root {
+	position: relative;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background: #011618;
+}
+
+.p-menubar {
+	background: transparent;
+	border: none;
+	margin: 0;
+	padding: 0;
+	padding-left: 2em;
+	border-radius: 0;
+	font-size: 1.2em;
+}
+
+.p-icon {
+	width: 2rem;
+	height: 2rem;
+}
+
+.p-menubar .p-menubar-button {
+	width: 4rem;
+	height: 4rem;
+}
+
+.p-card {
+	height: 360px;
+	border-radius: 0;
+}
+
+.p-card-title {
+	font-weight: 500;
+	color: #00D691;
+}

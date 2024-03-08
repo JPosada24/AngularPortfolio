@@ -1,0 +1,11 @@
+.btn-button {
+	background: #009364;
+	box-shadow: 0 0 20px #009364;
+	transition: background 300ms ease;
+	font-size: 1.2em;
+	cursor: pointer;
+}
+
+.btn-button:active {
+	background: #00D691;
+}

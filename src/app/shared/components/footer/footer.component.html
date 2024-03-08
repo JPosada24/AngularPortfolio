@@ -1,0 +1,16 @@
+<div class="main-container flex flex-column">
+
+	<div class="flex justify-content-center col-12 pt-0">
+		<img [src]="'assets/logotipo.png'" alt="logotipo.png" width="150">
+	</div>
+	<div class="flex justify-content-center p-0 col-12">
+		<p class="text-xs md:text-lg">Diseñado y Desarrollado por <span>Julian Posada</span></p>
+	</div>
+	<div class="flex justify-content-center col-12">
+		<shared-social-button class="inline-flex gap-5" bgColor="#fff" brightness="brightness(0)"></shared-social-button>
+	</div>
+	<div class="flex justify-content-center col-12">
+		<p class="text-xs md:text-lg">Copyright <span> © {{ current_date | date:'yyyy' }} </span>Todos los derechos reservados</p>
+	</div>
+	
+</div>

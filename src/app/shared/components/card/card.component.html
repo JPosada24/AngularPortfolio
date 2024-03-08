@@ -1,0 +1,13 @@
+<div class="flex flex-wrap flex-column md:flex-row justify-content-evenly align-items-center gap-4 pb-4 md:py-8">
+	@for (service of servicesCard; track $index) {
+	<p-card [header]="service.title" [subheader]="service.subtitle" class="w-10 md:w-3 text-center">
+		<ng-template pTemplate="header">
+			<img class="mt-5" alt="Card"
+				[src]="service.icon" width="100" height="100"/>
+		</ng-template>
+		<p>
+			{{ service.description }}
+		</p>
+	</p-card>
+	}
+</div>

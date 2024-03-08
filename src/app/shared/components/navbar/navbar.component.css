@@ -1,0 +1,22 @@
+/* .grid {
+	background: url('../../../../assets/Fondo_1.jpg') no-repeat;
+	background-size: cover;
+	height: 100vh;
+	margin: 0;
+} */
+
+/* img {
+	position: relative;
+} */
+
+.grid {
+	position: fixed;
+	width: 100%;
+	z-index: 500;
+}
+
+
+img {
+	filter: grayscale(100%) brightness(800%);
+	user-select: none;
+}
