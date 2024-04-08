@@ -45,3 +45,8 @@ body {
 	font-weight: 500;
 	color: #00D691;
 }
+
+.p-timeline .p-timeline-event-marker {
+	border: none;
+	background: #00D691;
+}

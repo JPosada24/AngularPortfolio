@@ -1,0 +1,20 @@
+<div class="mb-8">
+	<h2 class="text-center text-5xl font-light">Mis Habilidades</h2>
+
+	<div
+		class="flex flex-wrap justify-content-center px-8 column-gap-8 row-gap-6 col-12">
+
+		@for (service of servicesCard; track $index) {
+		<div
+			class="flex flex-column justify-content-center align-items-center border-round col-3 gap-1 skill-card">
+			<div>
+				<img [src]="service.icon" width="100" [alt]="service.title">
+			</div>
+			<div>
+				<h3 class="font-light text-2xl">{{ service.title }}</h3>
+			</div>
+		</div>
+		}
+
+	</div>
+</div>

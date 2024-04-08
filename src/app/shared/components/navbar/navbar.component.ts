@@ -17,7 +17,7 @@ export class NavbarComponent implements OnInit {
 		this.items = [
 			{
 				label: 'INICIO',
-				routerLink: '.',
+				routerLink: '/',
 			},
 			{
 				label: 'SOBRE MI',

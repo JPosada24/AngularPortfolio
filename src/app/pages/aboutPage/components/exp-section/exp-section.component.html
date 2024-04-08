@@ -1,0 +1,21 @@
+<div class="mb-8">
+	<h2 class="text-center mb-8 font-light text-5xl">Experiencia</h2>
+
+	<div class="card">
+		<p-timeline [value]="events">
+			<ng-template pTemplate="opposite" let-event>
+				<small class="font-light text-xs md:text-base flex flex-column text-center">
+					<span>{{ event.date }}</span>
+					<span>{{ event.city }}</span>
+				</small>
+			</ng-template>
+			<ng-template pTemplate="content" let-event>
+				<div class="col-12 -mt-2 md:pr-5 flex flex-column w-10rem md:w-auto">
+					<h2 class="text-sm md:text-xl font-medium m-0">{{ event.title }}</h2>
+					<h4 class="text-sm md:text-lg font-light m-0">{{ event.subtitle }}</h4>
+					<p class="text-sm md:text-lg font-light">{{ event.description}}</p>
+				</div>
+			</ng-template>
+		</p-timeline>
+	</div>
+</div>

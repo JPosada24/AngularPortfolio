@@ -1,0 +1,9 @@
+h2, span {
+	color: #00D691;
+}
+
+.skill-card {
+	height: 300px;
+	width: 300px;
+	background: #00444A;
+}

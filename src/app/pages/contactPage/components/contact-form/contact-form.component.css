@@ -1,0 +1,49 @@
+h2, span {
+	color: #00D691;
+}
+
+label {
+	color: #ffffff;
+}
+
+form {
+	height: 70vh;
+	padding: 28rem;
+}
+
+input[type="text"] {
+	color: white;
+	border: none;
+}
+
+input::placeholder, textarea::placeholder {
+	color: #888;
+}
+
+input[type="text"]:focus {
+    outline: auto;
+}
+
+.btn-submit {
+	border: none;
+	cursor: pointer;
+	padding: 1rem;
+	background: #00D691;
+}
+
+.msg {
+	border: none;
+}
+
+.msg:focus, .msg:hover {
+	outline: none;
+}
+
+@media (max-width: 768px) {
+
+	form {
+		height: auto;
+		padding: 8rem;
+	}
+
+}
