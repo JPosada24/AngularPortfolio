@@ -98,14 +98,14 @@ export class ContactFormComponent {
 		
 		this.show();
 
-		// resend.emails.send({
-		// 	from: email,
-		// 	to: 'julian_2120@hotmail.com',
-		// 	subject: `${name} interesado en hablar sobre proyectos`,
-		// 	html: `<p>${message}</p>`,
-		// });
+		resend.emails.send({
+			from: email,
+			to: 'julian_2120@hotmail.com',
+			subject: `${name} interesado en hablar sobre proyectos`,
+			html: `<p>${message}</p>`,
+		});
 
 
-		// this.emailForm.reset();
+		this.emailForm.reset();
 	}
 }
