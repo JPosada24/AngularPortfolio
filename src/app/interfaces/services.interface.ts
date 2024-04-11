@@ -3,4 +3,5 @@ export interface Services {
 	subtitle?: string;
 	description?: string;
 	icon?: string;
+	url?: string;
 }

@@ -17,7 +17,10 @@ export class NavbarComponent implements OnInit {
 		this.items = [
 			{
 				label: 'INICIO',
-				routerLink: '/',
+				routerLink: 'home',
+				routerLinkActiveOptions: {
+					exact: true,
+				},
 			},
 			{
 				label: 'SOBRE MI',
@@ -33,4 +36,5 @@ export class NavbarComponent implements OnInit {
 			},
 		];
 	}
+
 }

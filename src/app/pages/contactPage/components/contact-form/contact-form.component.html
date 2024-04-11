@@ -1,26 +1,45 @@
-<form [formGroup]="emailForm" (ngSubmit)="onSubmit()" class="flex flex-column md:flex-row justify-content-center align-items-center row-12 px-4 md:px-8">
+<form [formGroup]="emailForm" (ngSubmit)="onSubmit()"
+	class="flex flex-column md:flex-row justify-content-center align-items-center row-12 px-4 md:px-8">
 	<div class="flex flex-column col-12 md:col-6 px-4">
 		<div>
 			<h2 class="text-5xl font-light">Hablemos de tu proyecto</h2>
-			<h4 class="text-2xl font-light"><span>¿Tienes un proyecto en mente?</span> Cuéntame más sobre él y te ayudaré a
+			<h4 class="text-2xl font-light"><span>¿Tienes un proyecto en mente?</span>
+				Cuéntame más sobre él y te ayudaré a
 				hacerlo realidad.</h4>
-		</div>
-			
-		<div class="card flex justify-content-center">
-			<p-selectButton [options]="options" [multiple]="true" optionLabel="name" optionValue="value" ></p-selectButton>
 		</div>
 	</div>
 	<div class="flex flex-column gap-3 col-12 md:col-6">
 		<div class="flex flex-column gap-1">
 			<label class="text-lg" for="name">Nombre: </label>
-			<input type="text" id="name" formControlName="name" placeholder="Nombre Contacto" class="p-3 border-round-lg outline-none text-base" required>
+			<input type="text" id="name" formControlName="name"
+				placeholder="Nombre Contacto"
+				class="p-3 border-round-lg outline-none text-base">
+
+			@if (isValidField('name')) {
+			<span class="text-red-500">{{ getFieldError('name') }}</span>
+			}
 		</div>
 		<div class="flex flex-column gap-1">
 			<label class="text-lg" for="email">Correo Electronico: </label>
-			<input type="text" id="email" formControlName="email" placeholder="Correo Electronico" class="p-3 border-round-lg outline-none text-base">
+			<input type="text" id="email" formControlName="email"
+				placeholder="Correo Electronico"
+				class="p-3 border-round-lg outline-none text-base">
+			@if (isValidField('email')) {
+			<span class="text-red-500">{{ getFieldError('email') }}</span>
+			}
 		</div>
-		<textarea class="msg border-round-lg p-3 text-base" formControlName="message" name="message" id="" cols="30" rows="10" placeholder="Dejame un mensaje..."></textarea>
+		<textarea class="msg border-round-lg p-3 text-base" formControlName="message"
+			name="message" id cols="30" rows="10"
+			placeholder="Dejame un mensaje..."></textarea>
 
-		<input class="btn-submit border-round-lg text-lg" type="submit" value="Enviar">
+		@if (isValidField('message')) {
+		<span class="text-red-500">{{ getFieldError('message') }}</span>
+		}
+
+		<p-toast position="bottom-right"></p-toast>
+
+		<input class="btn-submit border-round-lg text-lg" type="submit"
+			value="Enviar">
+
 	</div>
 </form>

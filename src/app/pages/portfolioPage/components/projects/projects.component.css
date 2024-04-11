@@ -1,0 +1,19 @@
+.title-container {
+	padding-top: 10rem;
+}
+
+h2, span {
+	color: #00D691;
+}
+
+.card {
+	background: #00444A;
+}
+
+a {
+	background: #00D691;
+}
+
+img {
+	filter: brightness(80%);
+}

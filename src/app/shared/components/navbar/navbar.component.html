@@ -1,10 +1,22 @@
-<div class="grid">
-	<div class="col-12">
-		<p-menubar [model]="items">
-			<ng-template pTemplate="start">
-			</ng-template>
-			<ng-template pTemplate="end">
-				<a [routerLink]="''"><img src="../../../../assets/logotipo.png" width="150" /></a>
-			</ng-template>
-		</p-menubar>
+<div class="grid navbar-container">
+	<div class="col-12 flex justify-content-between align-items-center h-full">
+
+		<label for="menu-toggle" class="checkbox px-4">
+			<i class="pi pi-th-large"></i>
+		</label>
+		<input type="checkbox" id="menu-toggle">
+
+		<div class="flex gap-4 px-8 links-container">
+			@for (item of items; track $index) {
+			<a class="no-underline text-white py-3" [routerLink]="item.routerLink"
+				routerLinkActive="active">{{ item.label }}</a>
+			}
+		</div>
+
+		<a class="md:px-8" [routerLink]="''"><img
+				src="../../../../assets/logotipo.png"
+				width="150" /></a>
+
 	</div>
+
+	<!-- TODO: Hacer el menú responsivo -->

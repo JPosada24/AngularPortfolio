@@ -6,23 +6,24 @@ import { ContactPageLayoutComponent } from './pages/contactPage/layout/layout.co
 
 export const routes: Routes = [
 	{
-		path: '',
-		component: MainPageLayoutComponent
+		path: 'home',
+		component: MainPageLayoutComponent,
+		pathMatch: 'full',
 	},
 	{
 		path: 'about',
-		component: AboutPageLayoutComponent
+		component: AboutPageLayoutComponent,
 	},
 	{
 		path: 'portfolio',
-		component: PortfolioPageLayoutComponent
+		component: PortfolioPageLayoutComponent,
 	},
 	{
 		path: 'contact',
-		component: ContactPageLayoutComponent
+		component: ContactPageLayoutComponent,
 	},
 	{
 		path: '**',
-        redirectTo: ''
-	}
+		redirectTo: 'home',
+	},
 ];
