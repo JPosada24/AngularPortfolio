@@ -17,9 +17,17 @@ export class ExpSectionComponent {
 	constructor() {
 		this.events = [
 			{
+				title: 'ACITURRI TECH',
+				subtitle: 'Desarrollador RPA',
+				date: '2024 - Actualidad',
+				city: '(España, Remoto desde Colombia)',
+				description:
+					'Automatización robotica de procesos para diferentes empresas de España que lo requieran. Aportando en la liberación de tiempo de los colaboradores.',
+			},
+			{
 				title: 'HOSPITAL PABLO TOBÓN URIBE',
 				subtitle: 'Analista de Desarrollo',
-				date: '2022 - Actualidad',
+				date: '2022 - 2024',
 				city: '(Medellín, Antioquia, Colombia)',
 				description:
 					'Automatización robotica de procesos en diferentes áreas del hospital, impactando en la reducción del tareas repetitivas de los colaboradores y aumentando la productividad de cada proceso dentro del hospital. Desarrollo de aplicaciones web para la ejecución de las automatizaciones.',
@@ -29,7 +37,8 @@ export class ExpSectionComponent {
 				subtitle: 'Aprendiz área TIC.',
 				date: '2021 - 2022',
 				city: '(Manizales, Caldas, Colombia)',
-				description: 'Administración de plataforma de publicaciones. Desarrollo de estilos en página web.',
+				description:
+					'Administración de plataforma de publicaciones. Desarrollo de estilos en página web.',
 			},
 			{},
 		];
