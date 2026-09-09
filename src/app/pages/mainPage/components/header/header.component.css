@@ -10,7 +10,10 @@
 @media (max-width: 768px) {
 	.grid {
 		min-height: auto;
-		padding-bottom: 2rem;
+	}
+
+	.hero-text {
+		padding-top: 8rem !important;
 	}
 }
 
