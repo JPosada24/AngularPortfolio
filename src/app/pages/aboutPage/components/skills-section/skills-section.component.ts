@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CardComponent } from '../../../../shared/components/card/card.component';
-import { Services } from '../../../../interfaces/services.interface';
+import { SkillGroup } from '../../../../interfaces/skill-group.interface';
 
 @Component({
   selector: 'about-page-skills-section',
@@ -11,46 +11,31 @@ import { Services } from '../../../../interfaces/services.interface';
 })
 export class SkillsSectionComponent {
 
-	public servicesCard: Services[] = [
+	public skillGroups: SkillGroup[] = [
 		{
-			title: 'Html',
-			icon: 'assets/html.svg',
+			name: 'Frontend',
+			skills: [
+				{ title: 'Html', icon: 'assets/html.svg' },
+				{ title: 'Css', icon: 'assets/css3.svg' },
+				{ title: 'Typescript', icon: 'assets/ts.svg' },
+				{ title: 'Angular', icon: 'assets/angular.svg' },
+			],
 		},
 		{
-			title: 'Css',
-			icon: 'assets/css3.svg',
+			name: 'Backend y Automatización',
+			skills: [
+				{ title: 'Python', icon: 'assets/python.svg' },
+				{ title: 'Django', icon: 'assets/django.svg' },
+				{ title: 'FastAPI', icon: 'assets/fastapi.svg' },
+				{ title: 'Rocketbot', icon: 'assets/rocketbot.png' },
+				{ title: 'Power Automate', icon: 'assets/power-automate.svg' },
+			],
 		},
 		{
-			title: 'Typescript',
-			icon: 'assets/ts.svg',
-		},
-		{
-			title: 'Python',
-			icon: 'assets/python.svg',
-		},
-		{
-			title: 'Django',
-			icon: 'assets/django.svg',
-		},
-		{
-			title: 'FastAPI',
-			icon: 'assets/fastapi.svg',
-		},
-		{
-			title: 'Figma',
-			icon: 'assets/figma.svg',
-		},
-		{
-			title: 'Rocketbot',
-			icon: 'assets/rocketbot.png',
-		},
-		{
-			title: 'Power Automate',
-			icon: 'assets/power-automate.svg',
-		},
-		{
-			title: 'Angular',
-			icon: 'assets/angular.svg',
+			name: 'Diseño',
+			skills: [
+				{ title: 'Figma', icon: 'assets/figma.svg' },
+			],
 		},
 	];
 

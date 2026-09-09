@@ -2,6 +2,11 @@ h2, span {
 	color: #00D691;
 }
 
+.group-title {
+	color: #00D691;
+	margin-bottom: 1.5rem;
+}
+
 .skill-card {
 	height: 300px;
 	width: 300px;

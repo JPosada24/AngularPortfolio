@@ -1,20 +1,25 @@
 <div class="mb-8">
 	<h2 class="text-center text-5xl font-light">Mis Habilidades</h2>
 
-	<div
-		class="flex flex-wrap justify-content-center px-8 column-gap-8 row-gap-6 col-12">
+	@for (group of skillGroups; track group.name) {
+	<div class="skill-group mb-5">
+		<h3 class="text-center text-2xl font-light group-title">{{ group.name }}</h3>
 
-		@for (service of servicesCard; track $index) {
 		<div
-			class="flex flex-column justify-content-center align-items-center border-round col-3 gap-1 skill-card">
-			<div>
-				<img [src]="service.icon" width="100" [alt]="service.title">
+			class="flex flex-wrap justify-content-center px-8 column-gap-8 row-gap-6 col-12">
+			@for (service of group.skills; track service.title) {
+			<div
+				class="flex flex-column justify-content-center align-items-center border-round col-3 gap-1 skill-card">
+				<div>
+					<img [src]="service.icon" width="100" [alt]="service.title">
+				</div>
+				<div>
+					<h4 class="font-light text-xl m-0">{{ service.title }}</h4>
+				</div>
 			</div>
-			<div>
-				<h3 class="font-light text-xl">{{ service.title }}</h3>
-			</div>
+			}
 		</div>
-		}
-
 	</div>
+	}
+
 </div>
