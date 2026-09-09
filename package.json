@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:portfolio_project_angular": "node dist/portfolio_project_angular/server/server.mjs"
+    "serve:ssr:portfolio_project_angular": "node dist/portfolio_project_angular/server/server.mjs",
+    "serve:api": "npm run build && node dist/portfolio_project_angular/server/server.mjs"
   },
   "private": true,
   "dependencies": {

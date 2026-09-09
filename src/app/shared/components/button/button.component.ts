@@ -13,9 +13,9 @@ export class ButtonComponent {
 	@Input()
 	public labelInput: string = '';
 
-	/** Internal route to navigate to when no `href` is provided. */
+	/** Internal route to navigate to when no `href` is provided. Must be an absolute path. */
 	@Input()
-	public to: string = 'contact';
+	public to: string = '/contact';
 
 	/** External/asset link. When set, the button renders as an anchor instead of navigating internally. */
 	@Input()

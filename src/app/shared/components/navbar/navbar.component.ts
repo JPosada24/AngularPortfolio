@@ -17,22 +17,22 @@ export class NavbarComponent implements OnInit {
 		this.items = [
 			{
 				label: 'INICIO',
-				routerLink: 'home',
+				routerLink: '/home',
 				routerLinkActiveOptions: {
 					exact: true,
 				},
 			},
 			{
 				label: 'SOBRE MI',
-				routerLink: 'about',
+				routerLink: '/about',
 			},
 			{
 				label: 'PORTAFOLIO',
-				routerLink: 'portfolio',
+				routerLink: '/portfolio',
 			},
 			{
 				label: 'CONTACTO',
-				routerLink: 'contact',
+				routerLink: '/contact',
 			},
 		];
 	}

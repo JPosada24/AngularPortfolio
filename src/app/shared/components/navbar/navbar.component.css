@@ -34,6 +34,11 @@ input[type="checkbox"] {
 a {
 	border-bottom: 1px solid transparent;
 	transition: all ease 700ms;
+	white-space: nowrap;
+}
+
+.links-container {
+	flex-shrink: 0;
 }
 
 i {

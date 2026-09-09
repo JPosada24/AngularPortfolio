@@ -44,13 +44,19 @@ export function app(): express.Express {
     }
 
     try {
-      await resend.emails.send({
+      const { error } = await resend.emails.send({
         from: 'Portafolio <onboarding@resend.dev>',
         to: contactToEmail,
         reply_to: email,
         subject: `${name} está interesado en hablar sobre proyectos`,
         html: `<p><strong>Nombre:</strong> ${name}</p><p><strong>Correo:</strong> ${email}</p><p>${message}</p>`,
       });
+
+      if (error) {
+        console.error('Resend rejected the email', error);
+        res.status(502).json({ success: false, error: 'send_failed' });
+        return;
+      }
 
       res.json({ success: true });
     } catch (error) {

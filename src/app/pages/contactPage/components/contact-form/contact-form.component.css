@@ -7,13 +7,13 @@ label {
 }
 
 form {
-	height: 70vh;
-	padding: 28rem;
+	min-height: 60vh;
+	padding: 4rem 2rem;
 }
 
 input[type="text"] {
 	color: white;
-	border: none;
+	border: 2px solid transparent;
 }
 
 input::placeholder, textarea::placeholder {
@@ -22,6 +22,17 @@ input::placeholder, textarea::placeholder {
 
 input[type="text"]:focus {
     outline: auto;
+}
+
+.field-error {
+	color: #ff6b6b !important;
+	font-size: 0.9rem;
+}
+
+.input-invalid,
+.input-invalid:focus {
+	border-color: #ff6b6b !important;
+	outline: none;
 }
 
 .btn-submit {
@@ -38,7 +49,7 @@ input[type="text"]:focus {
 }
 
 .msg {
-	border: none;
+	border: 2px solid transparent;
 }
 
 .msg:focus, .msg:hover {
@@ -78,8 +89,8 @@ input[type="text"]:focus {
 @media (max-width: 768px) {
 
 	form {
-		height: auto;
-		padding: 8rem;
+		min-height: auto;
+		padding: 2rem 1.25rem;
 	}
 
 }

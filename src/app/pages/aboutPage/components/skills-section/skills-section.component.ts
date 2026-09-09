@@ -33,12 +33,20 @@ export class SkillsSectionComponent {
 			icon: 'assets/django.svg',
 		},
 		{
+			title: 'FastAPI',
+			icon: 'assets/fastapi.svg',
+		},
+		{
 			title: 'Figma',
 			icon: 'assets/figma.svg',
 		},
 		{
 			title: 'Rocketbot',
 			icon: 'assets/rocketbot.png',
+		},
+		{
+			title: 'Power Automate',
+			icon: 'assets/power-automate.svg',
 		},
 		{
 			title: 'Angular',
