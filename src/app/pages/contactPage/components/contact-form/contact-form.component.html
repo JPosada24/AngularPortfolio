@@ -39,7 +39,7 @@
 		<p-toast position="bottom-right"></p-toast>
 
 		<input class="btn-submit border-round-lg text-lg" type="submit"
-			value="Enviar">
+			[disabled]="sending" [value]="sending ? 'Enviando...' : 'Enviar'">
 
 	</div>
 </form>

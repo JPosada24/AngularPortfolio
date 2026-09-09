@@ -40,7 +40,6 @@ export class ExpSectionComponent {
 				description:
 					'Administración de plataforma de publicaciones. Desarrollo de estilos en página web.',
 			},
-			{},
 		];
 	}
 }

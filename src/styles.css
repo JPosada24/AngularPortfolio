@@ -51,3 +51,12 @@ body {
 	border: none;
 	background: #00D691;
 }
+
+/* Pages without a full-bleed hero need clearance under the fixed/blurred navbar,
+   otherwise their first heading renders hidden behind it. */
+about-page-layout,
+portfolio-page-layout,
+contact-page-layout {
+	display: block;
+	padding-top: 7rem;
+}

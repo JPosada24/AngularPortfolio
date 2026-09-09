@@ -1,1 +1,8 @@
-<input [routerLink]="'contact'" type="button" [value]="labelInput" class="btn-button text-light px-8 py-3 border-round-md border-none">
+@if (href) {
+<a [href]="href" [attr.download]="download ? '' : null" [target]="download ? null : '_blank'"
+	rel="noopener" [class.outline]="outline"
+	class="btn-button text-light px-8 py-3 border-round-md border-none no-underline inline-flex justify-content-center align-items-center">{{ labelInput }}</a>
+} @else {
+<input [routerLink]="to" type="button" [value]="labelInput" [class.outline]="outline"
+	class="btn-button text-light px-8 py-3 border-round-md border-none">
+}

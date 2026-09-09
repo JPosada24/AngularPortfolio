@@ -9,3 +9,15 @@
 .btn-button:active {
 	background: #00D691;
 }
+
+.btn-button.outline {
+	background: transparent;
+	box-shadow: none;
+	border: 1px solid #00D691 !important;
+	color: #00D691;
+}
+
+.btn-button.outline:active,
+.btn-button.outline:hover {
+	background: rgba(0, 214, 145, 0.15);
+}

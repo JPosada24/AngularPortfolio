@@ -1,52 +1,41 @@
 import { Component, inject } from '@angular/core';
-import { SelectButtonModule } from 'primeng/selectbutton';
-import { FloatLabelModule } from 'primeng/floatlabel';
+import { HttpClient } from '@angular/common/http';
 import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
 import {
 	FormBuilder,
-	FormControl,
 	FormGroup,
 	FormsModule,
 	ReactiveFormsModule,
 	Validators,
 } from '@angular/forms';
-import { Router } from '@angular/router';
-import { Resend } from 'resend';
 import { MessageService } from 'primeng/api';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BrowserModule } from '@angular/platform-browser';
-import { CommonModule } from '@angular/common';
+import { catchError, finalize, of } from 'rxjs';
 
-const resend = new Resend('re_dt394MhT_MeWSVjScfayXHAvzABXDMmmk');
+interface ContactResponse {
+	success: boolean;
+}
 
 @Component({
 	selector: 'contact-page-contact-form',
 	standalone: true,
-	imports: [
-		SelectButtonModule,
-		FloatLabelModule,
-		ButtonModule,
-		FormsModule,
-		ToastModule,
-		ReactiveFormsModule
-	],
+	imports: [ButtonModule, FormsModule, ToastModule, ReactiveFormsModule],
 	providers: [MessageService],
 	templateUrl: './contact-form.component.html',
 	styleUrl: './contact-form.component.css',
 })
 export class ContactFormComponent {
 	public fb = inject(FormBuilder);
-	public router = inject(Router);
+	public http = inject(HttpClient);
 	public messageService = inject(MessageService);
+
+	public sending = false;
 
 	public emailForm: FormGroup = this.fb.group({
 		name: ['', [Validators.required, Validators.minLength(3)]],
 		email: ['', [Validators.required, Validators.email]],
 		message: ['', [Validators.required, Validators.minLength(20)]],
 	});
-
-	public value: string | undefined;
 
 	isValidField(field: string): boolean | null {
 		return (
@@ -76,7 +65,7 @@ export class ContactFormComponent {
 		return null;
 	}
 
-	show() {
+	private notifySuccess(): void {
 		this.messageService.add({
 			severity: 'success',
 			summary: 'Email enviado',
@@ -84,28 +73,36 @@ export class ContactFormComponent {
 		});
 	}
 
+	private notifyError(): void {
+		this.messageService.add({
+			severity: 'error',
+			summary: 'Algo salió mal',
+			detail: 'No se pudo enviar el mensaje. Intenta de nuevo más tarde.',
+		});
+	}
+
 	onSubmit(): void {
-		if (this.emailForm.invalid) {
+		if (this.emailForm.invalid || this.sending) {
 			this.emailForm.markAllAsTouched();
 			return;
 		}
 
-		const { name, email, message } = this.emailForm.value;
+		this.sending = true;
 
-		console.log(name);
-		console.log(email);
-		console.log(message);
-		
-		this.show();
-
-		resend.emails.send({
-			from: email,
-			to: 'julian_2120@hotmail.com',
-			subject: `${name} interesado en hablar sobre proyectos`,
-			html: `<p>${message}</p>`,
-		});
-
-
-		this.emailForm.reset();
+		this.http
+			.post<ContactResponse>('/api/contact', this.emailForm.value)
+			.pipe(
+				catchError(() => {
+					this.notifyError();
+					return of(null);
+				}),
+				finalize(() => (this.sending = false))
+			)
+			.subscribe((response) => {
+				if (response?.success) {
+					this.notifySuccess();
+					this.emailForm.reset();
+				}
+			});
 	}
 }
