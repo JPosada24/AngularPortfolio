@@ -1,14 +1,3 @@
-/* .grid {
-	background: url('../../../../assets/Fondo_1.jpg') no-repeat;
-	background-size: cover;
-	height: 100vh;
-	margin: 0;
-} */
-
-/* img {
-	position: relative;
-} */
-
 .grid {
 	position: fixed;
 	width: 100vw;
@@ -21,14 +10,9 @@
 	display: none;
 }
 
-
 img {
 	filter: grayscale(100%) brightness(800%);
 	user-select: none;
-}
-
-input[type="checkbox"] {
-	display: none;
 }
 
 a {
@@ -53,25 +37,33 @@ i {
 
 	.checkbox {
 		display: block;
+		position: relative;
+		z-index: 600;
 	}
 
 	.links-container {
-		position: absolute;
+		position: fixed;
 		visibility: hidden;
-		top: 100%;
+		opacity: 0;
+		top: 0;
 		left: 0;
-		background-color: #333;
-		width: 100%;
+		height: 100vh;
+		width: 100vw;
+		background-color: #011618;
 		flex-direction: column;
-		padding: 10px 0;
-		transition: all ease 500ms;
+		justify-content: center;
+		align-items: center;
+		gap: 2.5rem !important;
+		transition: opacity 300ms ease, visibility 300ms ease;
 	}
 
+	.links-container a {
+		font-size: 1.5rem;
+	}
 
-
-	#menu-toggle:checked~.links-container {
+	.links-container.open {
 		visibility: visible;
-		transition: all ease 500ms;
+		opacity: 1;
 	}
 
 }

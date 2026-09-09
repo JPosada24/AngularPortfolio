@@ -2,9 +2,16 @@
 	background: url('../../../../../assets/Fondo_1.jpg') no-repeat;
 	background-size: cover;
 	background-position: center;
-	height: 100vh;
+	min-height: 100vh;
 	margin: 0;
 	position: relative;
+}
+
+@media (max-width: 768px) {
+	.grid {
+		min-height: auto;
+		padding-bottom: 2rem;
+	}
 }
 
 .grid::before {
