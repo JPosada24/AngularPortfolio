@@ -3,8 +3,7 @@
   publish = "dist/portfolio_project_angular/browser"
   functions = "netlify/functions"
 
-[[redirects]]
-  from = "/api/contact"
-  to = "/.netlify/functions/contact"
-  status = 200
-  force = true
+# Note: a /api/contact -> /.netlify/functions/contact redirect was tried here
+# but Netlify's Angular SSR framework detection swallows custom redirects for
+# app-like paths. The client calls /.netlify/functions/contact directly
+# instead (see contact-form.component.ts), which always works.

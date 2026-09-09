@@ -16,6 +16,14 @@ interface ContactResponse {
 	success: boolean;
 }
 
+/**
+ * Netlify's SSR/framework routing swallows custom netlify.toml redirects for
+ * app-like paths, so we call the function's own reserved URL directly instead
+ * of relying on a /api/contact rewrite. If this ever moves off Netlify, point
+ * this back at /api/contact (matched by server.ts and proxy.conf.json).
+ */
+const CONTACT_ENDPOINT = '/.netlify/functions/contact';
+
 @Component({
 	selector: 'contact-page-contact-form',
 	standalone: true,
@@ -90,7 +98,7 @@ export class ContactFormComponent {
 		this.sending = true;
 
 		this.http
-			.post<ContactResponse>('/api/contact', this.emailForm.value)
+			.post<ContactResponse>(CONTACT_ENDPOINT, this.emailForm.value)
 			.pipe(
 				catchError(() => {
 					this.notifyError();

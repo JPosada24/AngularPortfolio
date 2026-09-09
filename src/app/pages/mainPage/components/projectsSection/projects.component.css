@@ -17,6 +17,16 @@ p {
 	transition: transform 250ms ease, box-shadow 250ms ease;
 }
 
+.project-image-wrapper {
+	height: 10rem;
+	overflow: hidden;
+}
+
+.project-image-wrapper img {
+	max-height: 100%;
+	object-fit: contain;
+}
+
 .card:hover {
 	transform: translateY(-6px);
 	box-shadow: 0 10px 25px rgba(0, 214, 145, 0.15);

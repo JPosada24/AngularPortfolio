@@ -64,7 +64,7 @@ Esto genera el bundle en `dist/portfolio_project_angular` y levanta el servidor 
 
 ## Despliegue en Netlify
 
-El sitio se publica en Netlify como estático (`netlify.toml` define `publish = dist/portfolio_project_angular/browser` y `functions = netlify/functions`). El formulario de contacto llama a `/api/contact`, que `netlify.toml` redirige a la función `/.netlify/functions/contact`.
+El sitio se publica en Netlify como estático (`netlify.toml` define `publish = dist/portfolio_project_angular/browser` y `functions = netlify/functions`). El formulario de contacto llama directamente a `/.netlify/functions/contact` (la URL nativa de la función) — se probó un redirect `/api/contact -> función` vía `netlify.toml`, pero la detección de SSR de Angular en Netlify lo ignora para rutas de la app, así que el cliente evita ese problema llamando a la función directamente.
 
 Para que el formulario funcione en producción:
 
